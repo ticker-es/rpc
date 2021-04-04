@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package ticker.rpc;
+option go_package = "github.com/mtrense/ticker/rpc";
+
+service Maintenance {
+  rpc GetServerState(google.protobuf.Empty) returns (ServerState);
+  rpc Shutdown(ShutdownParameters) returns (google.protobuf.Empty);
+}
+
+message ShutdownParameters {
+  uint32 grace_period = 1;
+}
+
+message ServerState {
+  int64 uptime = 1;
+  uint32 connection_count = 2;
+  int64 event_count = 3;
+}
