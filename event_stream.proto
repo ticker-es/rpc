@@ -6,7 +6,7 @@ import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
 package ticker.rpc;
-option go_package = "rpc";
+option go_package = "github.com/ticker-es/client-go/rpc";
 
 service EventStream {
   rpc Emit(Event) returns (Ack);
