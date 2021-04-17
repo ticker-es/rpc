@@ -4,7 +4,7 @@ syntax = "proto3";
 import "google/protobuf/empty.proto";
 
 package ticker.rpc;
-option go_package = "github.com/mtrense/ticker/rpc";
+option go_package = "rpc";
 
 service Maintenance {
   rpc GetServerState(google.protobuf.Empty) returns (ServerState);
