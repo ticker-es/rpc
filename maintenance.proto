@@ -5,6 +5,7 @@ import "google/protobuf/empty.proto";
 
 package ticker.rpc;
 option go_package = "github.com/ticker-es/client-go/rpc";
+option ruby_package = "Ticker::RPC";
 
 service Maintenance {
   rpc GetServerState(google.protobuf.Empty) returns (ServerState);
