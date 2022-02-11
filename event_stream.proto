@@ -12,6 +12,7 @@ option ruby_package = "Ticker::RPC";
 service EventStream {
   rpc Emit(Event) returns (Published);
   rpc Stream(StreamRequest) returns (stream Event);
+  rpc Listen(ListenRequest) returns (stream Event);
   rpc Subscribe(SubscriptionRequest) returns (stream Event);
   rpc Acknowledge(Ack) returns (google.protobuf.Empty);
 }
@@ -19,6 +20,10 @@ service EventStream {
 message StreamRequest {
   Bracket bracket = 1;
   Selector selector = 2;
+}
+
+message ListenRequest {
+  Selector selector = 1;
 }
 
 message SubscriptionRequest {
