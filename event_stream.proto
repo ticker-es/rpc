@@ -14,7 +14,7 @@ service EventStream {
   rpc Stream(StreamRequest) returns (stream Event);
   rpc Listen(ListenRequest) returns (stream Event);
   rpc Subscribe(SubscriptionRequest) returns (stream Event);
-  rpc Acknowledge(Ack) returns (google.protobuf.Empty);
+  rpc Acknowledge(stream Ack) returns (google.protobuf.Empty);
 }
 
 message StreamRequest {
